@@ -4,7 +4,7 @@ import '../../domain/entities/chat_message.dart';
 import '../models/assistant_reply_model.dart';
 import 'assistant_fake_api.dart';
 
-/// Talks to the `/assistant` endpoints, answered for now by the fake API.
+/// Talks to the `/assistant` endpoints (the Go backend, or the fake API).
 class AssistantRemoteSource {
   AssistantRemoteSource(this._dio);
 

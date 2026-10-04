@@ -5,10 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/network/dio_provider.dart';
 import '../../../../core/settings/settings_provider.dart';
 import '../../../../core/usecase/usecase.dart';
-import '../../../catalog/presentation/providers/catalog_providers.dart';
 import '../../data/repositories/assistant_repository_impl.dart';
 import '../../data/sources/assistant_remote_source.dart';
-import '../../data/sources/gemini_chatbot.dart';
 import '../../domain/entities/chat_message.dart';
 import '../../domain/repositories/assistant_repository.dart';
 import '../../domain/usecases/ask_assistant.dart';
@@ -16,11 +14,8 @@ import '../../domain/usecases/open_conversation.dart';
 
 /// Replies come in the app's language (the device's until one is chosen).
 final assistantRepositoryProvider = Provider<AssistantRepository>((ref) {
-  final dio = ref.watch(dioProvider);
   return AssistantRepositoryImpl(
-    AssistantRemoteSource(dio),
-    ref.watch(bookRepositoryProvider),
-    GeminiChatbot(dio),
+    AssistantRemoteSource(ref.watch(dioProvider)),
     () =>
         ref.read(settingsProvider).locale?.languageCode ??
         PlatformDispatcher.instance.locale.languageCode,

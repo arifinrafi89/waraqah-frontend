@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/app_theme.dart';
 import '../../features/ai_assistant/ai_assistant_routes.dart';
 
-/// Squared floating button that opens the Gemini reading assistant from any tab.
+/// Squared floating button that opens the reading assistant from any tab.
 class AiFab extends StatelessWidget {
   const AiFab({super.key});
 
