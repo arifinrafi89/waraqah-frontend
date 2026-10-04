@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 
 import 'api_config.dart';
 import 'api_exception.dart';
+import 'live_adapter.dart';
 
 /// Single configured [Dio] instance for the whole app.
 ///
@@ -18,6 +19,7 @@ abstract final class DioClient {
         headers: const {'Accept': 'application/json'},
       ),
     );
+    useStreamingAdapter(dio);
     if (kDebugMode) {
       dio.interceptors.add(LogInterceptor());
     }

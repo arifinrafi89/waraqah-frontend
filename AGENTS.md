@@ -166,7 +166,7 @@ The app also has:
 | Framework | Flutter (Dart SDK ^3.13), one app for Android, iOS, web and desktop |
 | State | **Riverpod 3** (`flutter_riverpod`). The only state library. |
 | Routing | **go_router 17** with a `StatefulShellRoute` for the 5 tabs |
-| Networking | **Dio 5**, one instance from `dioProvider` |
+| Networking | **Dio 5**, one instance from `dioProvider`; `web` (live streams on the web) |
 | Models | **freezed 4 + json_serializable** (codegen with `build_runner`) |
 | Localisation | `flutter_localizations` + ARB files, **English and Bangla** (`AppL10n`) |
 | Storage | `shared_preferences` (settings, session) |
@@ -277,7 +277,7 @@ features/<feature>/
   - moderation deletes removed Bites, comments and reviews in `BiteFakeStore` and `ReviewFakeStore`.
   - A fake backend file may import another feature's `data/sources` for this, with a comment saying why. App code never does (§4.2).
 - **One signed-in reader.** The fake backend has one signed-in reader ("me"), the way the real server will know who is asking from the login token. JSON says what's theirs (`isMine`, `isMyDeal`, a thread's `role`); the app never compares names.
-- **Live updates.** A handler may answer a `ResponseBody` stream. `/inbox/live` streams server-sent events, one `data: {...}` line per change. `InboxLiveSource` reads it through `dioProvider` with `ResponseType.stream`, and the Go backend should stream the same lines. Providers listen to `inboxChangesProvider` and reload what changed.
+- **Live updates.** A handler may answer a `ResponseBody` stream. `/inbox/live` streams server-sent events, one `data: {...}` line per change. Every live source reads its endpoint with `liveEvents(dio, path)` (`core/network/live_events.dart`): it skips `:` comment lines (the Go backend's `: ping` heartbeats every 25 s) and reconnects after 1, 2, 4 … up to 30 s when the connection ends or fails, back to 1 s once the server sends anything. On the web, Dio's adapter only answers when a response ends, so `useStreamingAdapter` (`live_adapter.dart`) gives `DioClient` a `fetch`-based adapter for `ResponseType.stream` requests. Providers listen to `inboxChangesProvider` and reload what changed.
 - **Going live:** build with `--dart-define=API_BASE_URL=http://localhost:8080/v1` (Android emulator `http://10.0.2.2:8080/v1`). With no value the app keeps the fake API (`ApiConfig.useFakeApi`). With one, `AppBootstrap` skips the fake interceptor and installs `AuthInterceptor`, which sends the signed-in session's `Authorization: Bearer` token and, on a `401`, calls `/auth/refresh` once and retries (`StoredSessionTokens`). A refused refresh token ends the session (`SessionExpiry`). The backend's API contract is the fake API; see its repository.
 
 ### 4.5 Accounts and roles (already built)
