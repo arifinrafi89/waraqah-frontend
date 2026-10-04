@@ -15,6 +15,7 @@ class ListingPhotoTile extends StatelessWidget {
     required this.label,
     required this.bytes,
     required this.held,
+    this.url,
     required this.needed,
     required this.onPick,
     required this.onRemove,
@@ -25,6 +26,9 @@ class ListingPhotoTile extends StatelessWidget {
 
   /// Has a photo: just picked ([bytes]) or uploaded before.
   final bool held;
+
+  /// The server's thumbnail of a photo uploaded before, if it sent one.
+  final String? url;
   final bool needed;
   final VoidCallback onPick;
   final VoidCallback onRemove;
@@ -34,6 +38,7 @@ class ListingPhotoTile extends StatelessWidget {
     final palette = context.palette;
     final l10n = AppL10n.of(context)!;
     final picked = bytes;
+    final saved = held && picked == null ? url : null;
     final caption = held
         ? (picked == null ? l10n.listingPhotoSaved : null)
         : (needed ? l10n.listingPhotoNeeded : null);
@@ -55,13 +60,19 @@ class ListingPhotoTile extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               if (picked != null) Image.memory(picked, fit: BoxFit.cover),
+              if (saved != null)
+                Image.network(
+                  saved,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                ),
               Padding(
                 padding: const EdgeInsets.all(6),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    if (picked == null)
+                    if (picked == null && saved == null)
                       Expanded(
                         child: Center(
                           child: Icon(

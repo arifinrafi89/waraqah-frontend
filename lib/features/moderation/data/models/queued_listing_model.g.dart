@@ -22,6 +22,11 @@ _QueuedListingModel _$QueuedListingModelFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
+      photoUrls:
+          (json['photoUrls'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          ) ??
+          const <String, String>{},
       coverSeed: (json['coverSeed'] as num?)?.toInt() ?? 0,
       sellerStrikes: (json['sellerStrikes'] as num?)?.toInt() ?? 0,
       newPriceBdt: (json['newPriceBdt'] as num?)?.toInt(),
@@ -38,6 +43,7 @@ Map<String, dynamic> _$QueuedListingModelToJson(_QueuedListingModel instance) =>
       'condition': _$BookConditionEnumMap[instance.condition]!,
       'flags': instance.flags,
       'photos': instance.photos,
+      'photoUrls': instance.photoUrls,
       'coverSeed': instance.coverSeed,
       'sellerStrikes': instance.sellerStrikes,
       'newPriceBdt': instance.newPriceBdt,

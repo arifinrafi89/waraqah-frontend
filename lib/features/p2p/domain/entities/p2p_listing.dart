@@ -36,6 +36,10 @@ abstract class P2pListing with _$P2pListing {
     @Default(BookCondition.good) BookCondition condition,
     @Default(<String>[]) List<String> flags,
     @Default(<String>[]) List<String> photos,
+
+    /// The thumbnail of each slot the server stored a photo for. Empty on
+    /// the fake API, which keeps only the slot names.
+    @Default(<String, String>{}) Map<String, String> photoUrls,
     @Default(false) bool isNegotiable,
     @Default(HandoverMethod.meetInPerson) HandoverMethod handover,
     @Default(P2pListingStatus.live) P2pListingStatus status,

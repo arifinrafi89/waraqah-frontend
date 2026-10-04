@@ -9,6 +9,7 @@ import '../../../../core/widgets/surface_card.dart';
 import '../../../../core/widgets/tags.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../catalog/presentation/widgets/used_labels.dart';
+import '../../../p2p/presentation/widgets/listing_cover.dart';
 import '../../domain/entities/queued_listing.dart';
 import 'listing_decision_bar.dart';
 import 'listing_photo_strip.dart';
@@ -38,11 +39,17 @@ class QueuedListingCard extends StatelessWidget {
             children: [
               SizedBox(
                 width: 64,
-                child: CoverArt(
-                  title: listing.title,
-                  seed: listing.coverSeed,
+                child: AspectRatio(
                   aspectRatio: 2 / 3,
-                  fontSize: 8,
+                  child: ListingCover(
+                    photoUrl: listing.photoUrls['front'],
+                    art: CoverArt(
+                      title: listing.title,
+                      seed: listing.coverSeed,
+                      aspectRatio: null,
+                      fontSize: 8,
+                    ),
+                  ),
                 ),
               ),
               Expanded(
