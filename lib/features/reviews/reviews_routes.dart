@@ -12,6 +12,11 @@ abstract final class ReviewsRoutes {
   static final List<RouteBase> routes = [
     GoRoute(
       path: reviews,
+      // Reviews belong to one Book; without one there is nothing to show.
+      redirect: (_, state) =>
+          (state.uri.queryParameters['bookId'] ?? '').isEmpty
+          ? '/catalog'
+          : null,
       builder: (_, state) =>
           BookReviewsPage(bookId: state.uri.queryParameters['bookId'] ?? ''),
     ),

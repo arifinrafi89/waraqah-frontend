@@ -16,7 +16,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ScannedBookModel {
 
- String get bookId; String get title; String get author; String get isbn; int get coverSeed; int? get newPriceBdt;
+ String get bookId; String get title; String get author; String get isbn; int get coverSeed; String? get coverUrl; int? get newPriceBdt;
 /// Create a copy of ScannedBookModel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -30,20 +30,20 @@ $ScannedBookModelCopyWith<ScannedBookModel> get copyWith => _$ScannedBookModelCo
 @override
 bool operator ==(Object other) {
   final _this = this as ScannedBookModel;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScannedBookModel&&(identical(other.bookId, _this.bookId) || other.bookId == _this.bookId)&&(identical(other.title, _this.title) || other.title == _this.title)&&(identical(other.author, _this.author) || other.author == _this.author)&&(identical(other.isbn, _this.isbn) || other.isbn == _this.isbn)&&(identical(other.coverSeed, _this.coverSeed) || other.coverSeed == _this.coverSeed)&&(identical(other.newPriceBdt, _this.newPriceBdt) || other.newPriceBdt == _this.newPriceBdt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ScannedBookModel&&(identical(other.bookId, _this.bookId) || other.bookId == _this.bookId)&&(identical(other.title, _this.title) || other.title == _this.title)&&(identical(other.author, _this.author) || other.author == _this.author)&&(identical(other.isbn, _this.isbn) || other.isbn == _this.isbn)&&(identical(other.coverSeed, _this.coverSeed) || other.coverSeed == _this.coverSeed)&&(identical(other.coverUrl, _this.coverUrl) || other.coverUrl == _this.coverUrl)&&(identical(other.newPriceBdt, _this.newPriceBdt) || other.newPriceBdt == _this.newPriceBdt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode {
   final _this = this as ScannedBookModel;
-  return Object.hash(runtimeType,_this.bookId,_this.title,_this.author,_this.isbn,_this.coverSeed,_this.newPriceBdt);
+  return Object.hash(runtimeType,_this.bookId,_this.title,_this.author,_this.isbn,_this.coverSeed,_this.coverUrl,_this.newPriceBdt);
 }
 
 @override
 String toString() {
   final _this = this as ScannedBookModel;
-  return 'ScannedBookModel(bookId: ${_this.bookId}, title: ${_this.title}, author: ${_this.author}, isbn: ${_this.isbn}, coverSeed: ${_this.coverSeed}, newPriceBdt: ${_this.newPriceBdt})';
+  return 'ScannedBookModel(bookId: ${_this.bookId}, title: ${_this.title}, author: ${_this.author}, isbn: ${_this.isbn}, coverSeed: ${_this.coverSeed}, coverUrl: ${_this.coverUrl}, newPriceBdt: ${_this.newPriceBdt})';
 }
 
 
@@ -54,7 +54,7 @@ abstract mixin class $ScannedBookModelCopyWith<$Res>  {
   factory $ScannedBookModelCopyWith(ScannedBookModel value, $Res Function(ScannedBookModel) _then) = _$ScannedBookModelCopyWithImpl;
 @useResult
 $Res call({
- String bookId, String title, String author, String isbn, int coverSeed, int? newPriceBdt
+ String bookId, String title, String author, String isbn, int coverSeed, String? coverUrl, int? newPriceBdt
 });
 
 
@@ -71,14 +71,15 @@ class _$ScannedBookModelCopyWithImpl<$Res>
 
 /// Create a copy of ScannedBookModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? bookId = null,Object? title = null,Object? author = null,Object? isbn = null,Object? coverSeed = null,Object? newPriceBdt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? bookId = null,Object? title = null,Object? author = null,Object? isbn = null,Object? coverSeed = null,Object? coverUrl = freezed,Object? newPriceBdt = freezed,}) {
   return _then(ScannedBookModel(
 bookId: null == bookId ? _self.bookId : bookId // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,author: null == author ? _self.author : author // ignore: cast_nullable_to_non_nullable
 as String,isbn: null == isbn ? _self.isbn : isbn // ignore: cast_nullable_to_non_nullable
 as String,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
-as int,newPriceBdt: freezed == newPriceBdt ? _self.newPriceBdt : newPriceBdt // ignore: cast_nullable_to_non_nullable
+as int,coverUrl: freezed == coverUrl ? _self.coverUrl : coverUrl // ignore: cast_nullable_to_non_nullable
+as String?,newPriceBdt: freezed == newPriceBdt ? _self.newPriceBdt : newPriceBdt // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }
@@ -164,10 +165,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String bookId,  String title,  String author,  String isbn,  int coverSeed,  int? newPriceBdt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String bookId,  String title,  String author,  String isbn,  int coverSeed,  String? coverUrl,  int? newPriceBdt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ScannedBookModel() when $default != null:
-return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed,_that.newPriceBdt);case _:
+return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed,_that.coverUrl,_that.newPriceBdt);case _:
   return orElse();
 
 }
@@ -185,10 +186,10 @@ return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String bookId,  String title,  String author,  String isbn,  int coverSeed,  int? newPriceBdt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String bookId,  String title,  String author,  String isbn,  int coverSeed,  String? coverUrl,  int? newPriceBdt)  $default,) {final _that = this;
 switch (_that) {
 case _ScannedBookModel():
-return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed,_that.newPriceBdt);case _:
+return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed,_that.coverUrl,_that.newPriceBdt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -205,10 +206,10 @@ return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String bookId,  String title,  String author,  String isbn,  int coverSeed,  int? newPriceBdt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String bookId,  String title,  String author,  String isbn,  int coverSeed,  String? coverUrl,  int? newPriceBdt)?  $default,) {final _that = this;
 switch (_that) {
 case _ScannedBookModel() when $default != null:
-return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed,_that.newPriceBdt);case _:
+return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed,_that.coverUrl,_that.newPriceBdt);case _:
   return null;
 
 }
@@ -220,7 +221,7 @@ return $default(_that.bookId,_that.title,_that.author,_that.isbn,_that.coverSeed
 @JsonSerializable()
 
 class _ScannedBookModel implements ScannedBookModel {
-  const _ScannedBookModel({required this.bookId, required this.title, required this.author, required this.isbn, this.coverSeed = 0, this.newPriceBdt});
+  const _ScannedBookModel({required this.bookId, required this.title, required this.author, required this.isbn, this.coverSeed = 0, this.coverUrl, this.newPriceBdt});
   factory _ScannedBookModel.fromJson(Map<String, dynamic> json) => _$ScannedBookModelFromJson(json);
 
 @override final  String bookId;
@@ -228,6 +229,7 @@ class _ScannedBookModel implements ScannedBookModel {
 @override final  String author;
 @override final  String isbn;
 @override@JsonKey() final  int coverSeed;
+@override final  String? coverUrl;
 @override final  int? newPriceBdt;
 
 /// Create a copy of ScannedBookModel
@@ -243,18 +245,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScannedBookModel&&(identical(other.bookId, bookId) || other.bookId == bookId)&&(identical(other.title, title) || other.title == title)&&(identical(other.author, author) || other.author == author)&&(identical(other.isbn, isbn) || other.isbn == isbn)&&(identical(other.coverSeed, coverSeed) || other.coverSeed == coverSeed)&&(identical(other.newPriceBdt, newPriceBdt) || other.newPriceBdt == newPriceBdt));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _ScannedBookModel&&(identical(other.bookId, bookId) || other.bookId == bookId)&&(identical(other.title, title) || other.title == title)&&(identical(other.author, author) || other.author == author)&&(identical(other.isbn, isbn) || other.isbn == isbn)&&(identical(other.coverSeed, coverSeed) || other.coverSeed == coverSeed)&&(identical(other.coverUrl, coverUrl) || other.coverUrl == coverUrl)&&(identical(other.newPriceBdt, newPriceBdt) || other.newPriceBdt == newPriceBdt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode {
-    return Object.hash(runtimeType,bookId,title,author,isbn,coverSeed,newPriceBdt);
+    return Object.hash(runtimeType,bookId,title,author,isbn,coverSeed,coverUrl,newPriceBdt);
 }
 
 @override
 String toString() {
-    return 'ScannedBookModel(bookId: $bookId, title: $title, author: $author, isbn: $isbn, coverSeed: $coverSeed, newPriceBdt: $newPriceBdt)';
+    return 'ScannedBookModel(bookId: $bookId, title: $title, author: $author, isbn: $isbn, coverSeed: $coverSeed, coverUrl: $coverUrl, newPriceBdt: $newPriceBdt)';
 }
 
 
@@ -265,7 +267,7 @@ abstract mixin class _$ScannedBookModelCopyWith<$Res> implements $ScannedBookMod
   factory _$ScannedBookModelCopyWith(_ScannedBookModel value, $Res Function(_ScannedBookModel) _then) = __$ScannedBookModelCopyWithImpl;
 @override @useResult
 $Res call({
- String bookId, String title, String author, String isbn, int coverSeed, int? newPriceBdt
+ String bookId, String title, String author, String isbn, int coverSeed, String? coverUrl, int? newPriceBdt
 });
 
 
@@ -282,14 +284,15 @@ class __$ScannedBookModelCopyWithImpl<$Res>
 
 /// Create a copy of ScannedBookModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? bookId = null,Object? title = null,Object? author = null,Object? isbn = null,Object? coverSeed = null,Object? newPriceBdt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? bookId = null,Object? title = null,Object? author = null,Object? isbn = null,Object? coverSeed = null,Object? coverUrl = freezed,Object? newPriceBdt = freezed,}) {
   return _then(_ScannedBookModel(
 bookId: null == bookId ? _self.bookId : bookId // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,author: null == author ? _self.author : author // ignore: cast_nullable_to_non_nullable
 as String,isbn: null == isbn ? _self.isbn : isbn // ignore: cast_nullable_to_non_nullable
 as String,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
-as int,newPriceBdt: freezed == newPriceBdt ? _self.newPriceBdt : newPriceBdt // ignore: cast_nullable_to_non_nullable
+as int,coverUrl: freezed == coverUrl ? _self.coverUrl : coverUrl // ignore: cast_nullable_to_non_nullable
+as String?,newPriceBdt: freezed == newPriceBdt ? _self.newPriceBdt : newPriceBdt // ignore: cast_nullable_to_non_nullable
 as int?,
   ));
 }

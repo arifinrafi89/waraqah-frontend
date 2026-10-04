@@ -46,6 +46,7 @@ class ScanFoundCard extends ConsumerWidget {
                 child: CoverArt(
                   title: book.title,
                   seed: book.coverSeed,
+                  imageUrl: book.coverUrl,
                   aspectRatio: 2 / 3,
                   fontSize: 8,
                 ),

@@ -13,6 +13,7 @@ _ScannedBookModel _$ScannedBookModelFromJson(Map<String, dynamic> json) =>
       author: json['author'] as String,
       isbn: json['isbn'] as String,
       coverSeed: (json['coverSeed'] as num?)?.toInt() ?? 0,
+      coverUrl: json['coverUrl'] as String?,
       newPriceBdt: (json['newPriceBdt'] as num?)?.toInt(),
     );
 
@@ -23,5 +24,6 @@ Map<String, dynamic> _$ScannedBookModelToJson(_ScannedBookModel instance) =>
       'author': instance.author,
       'isbn': instance.isbn,
       'coverSeed': instance.coverSeed,
+      'coverUrl': instance.coverUrl,
       'newPriceBdt': instance.newPriceBdt,
     };
