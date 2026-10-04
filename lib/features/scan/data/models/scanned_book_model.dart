@@ -14,6 +14,7 @@ abstract class ScannedBookModel with _$ScannedBookModel {
     required String author,
     required String isbn,
     @Default(0) int coverSeed,
+    String? coverUrl,
     int? newPriceBdt,
   }) = _ScannedBookModel;
 
@@ -28,6 +29,7 @@ extension ScannedBookModelX on ScannedBookModel {
     author: author,
     isbn: isbn,
     coverSeed: coverSeed,
+    coverUrl: coverUrl,
     newPriceBdt: newPriceBdt,
   );
 }

@@ -12,6 +12,7 @@ abstract class ScannedBook with _$ScannedBook {
     required String author,
     required String isbn,
     @Default(0) int coverSeed,
+    String? coverUrl,
 
     /// The Book's From-price, `null` when no Edition can be ordered.
     int? newPriceBdt,
