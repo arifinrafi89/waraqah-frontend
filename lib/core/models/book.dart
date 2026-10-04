@@ -45,6 +45,9 @@ abstract class Book with _$Book {
     @Default(0) double rating,
     @Default(<String>[]) List<String> tags,
     @Default(0) int coverSeed,
+
+    /// A picture of the book, when the server has one; the generated cover otherwise.
+    String? coverUrl,
     String? shortTitle,
     // The Bangla title, when the Book has one. Staff set it; search reads it.
     String? titleBn,

@@ -92,6 +92,7 @@ class _Covers extends StatelessWidget {
               child: CoverArt(
                 title: book.coverLabel,
                 seed: book.coverSeed,
+                imageUrl: book.coverUrl,
                 aspectRatio: null,
                 fontSize: 9,
                 radius: Radii.sm,

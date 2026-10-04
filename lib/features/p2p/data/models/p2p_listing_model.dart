@@ -30,6 +30,7 @@ abstract class P2pListingModel with _$P2pListingModel {
     String? rejectionReason,
     String? bookId,
     @Default(0) int coverSeed,
+    String? coverUrl,
     String? district,
     String? area,
 
@@ -63,6 +64,7 @@ extension P2pListingModelX on P2pListingModel {
     rejectionReason: rejectionReason,
     bookId: bookId,
     coverSeed: coverSeed,
+    coverUrl: coverUrl,
     district: district,
     area: area,
     categoryId: categoryId,

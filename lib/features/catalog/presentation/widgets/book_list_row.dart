@@ -57,6 +57,7 @@ class BookListRow extends StatelessWidget {
                   child: CoverArt(
                     title: book.localCoverLabel(context),
                     seed: book.coverSeed,
+                    imageUrl: book.coverUrl,
                     aspectRatio: Sizes.listThumbWidth / Sizes.listThumbHeight,
                     fontSize: 8.5,
                     radius: 10,

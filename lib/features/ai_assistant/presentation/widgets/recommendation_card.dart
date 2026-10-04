@@ -54,6 +54,7 @@ class RecommendationCard extends ConsumerWidget {
               child: CoverArt(
                 title: book.coverLabel,
                 seed: book.coverSeed,
+                imageUrl: book.coverUrl,
                 aspectRatio: 38 / 52,
                 fontSize: 7,
                 radius: 7,

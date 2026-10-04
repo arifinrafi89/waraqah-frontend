@@ -55,6 +55,7 @@ class BooklistBookRow extends ConsumerWidget {
                 child: CoverArt(
                   title: book.localCoverLabel(context),
                   seed: book.coverSeed,
+                  imageUrl: book.coverUrl,
                   fontSize: 6,
                   radius: Radii.sm,
                 ),

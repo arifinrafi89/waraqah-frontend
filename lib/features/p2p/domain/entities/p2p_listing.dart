@@ -52,6 +52,9 @@ abstract class P2pListing with _$P2pListing {
     String? rejectionReason,
     String? bookId,
     @Default(0) int coverSeed,
+
+    /// A picture of the book itself, for a Listing without a photo of its own.
+    String? coverUrl,
     String? district,
     String? area,
 
