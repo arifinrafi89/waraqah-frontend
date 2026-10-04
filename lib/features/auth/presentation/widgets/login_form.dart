@@ -15,14 +15,16 @@ class LoginForm extends StatefulWidget {
   const LoginForm({
     super.key,
     required this.onSubmit,
-    required this.onGoogle,
+    required this.google,
     required this.onForgotPassword,
     this.isBusy = false,
     this.errorText,
   });
 
   final void Function(String email, String password) onSubmit;
-  final VoidCallback onGoogle;
+
+  /// The "Continue with Google" button (`GoogleSignInButton`).
+  final Widget google;
   final VoidCallback onForgotPassword;
   final bool isBusy;
   final String? errorText;
@@ -96,11 +98,7 @@ class _LoginFormState extends State<LoginForm> {
             onPressed: () => widget.onSubmit(_email.text, _password.text),
           ),
           AuthDivider(label: l10n.authOrContinueWith),
-          SecondaryButton(
-            label: l10n.authContinueWithGoogle,
-            icon: const GoogleGlyph(),
-            onPressed: widget.isBusy ? null : widget.onGoogle,
-          ),
+          widget.google,
         ],
       ),
     );

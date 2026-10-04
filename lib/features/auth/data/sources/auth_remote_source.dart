@@ -24,8 +24,8 @@ class AuthRemoteSource {
     return AppUserModel.fromJson(data);
   }
 
-  /// [idToken] is the Google ID token from `google_sign_in`; the real backend verifies it.
-  /// The fake API ignores the body.
+  /// [idToken] is the Google ID token from `google_sign_in`; the real backend
+  /// verifies it. The fake API ignores the body.
   Future<AppUserModel> signInWithGoogle({String? idToken}) async {
     final response = await _dio.post<Map<String, dynamic>>(
       AuthFakeApi.google,
