@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/settings/settings_provider.dart';
 import '../core/theme/app_theme.dart';
+import '../core/widgets/phone_frame.dart';
 import '../l10n/app_localizations.dart';
 import 'router/router_provider.dart';
 
@@ -25,6 +26,9 @@ class WaraqahApp extends ConsumerWidget {
       themeMode: settings.themeMode,
       theme: AppTheme.light(),
       darkTheme: AppTheme.dark(),
+      // On a laptop browser the app shows as a phone-sized screen.
+      builder: (context, child) =>
+          PhoneFrame(child: child ?? const SizedBox.shrink()),
       locale: settings.locale,
       supportedLocales: AppL10n.supportedLocales,
       localizationsDelegates: const [

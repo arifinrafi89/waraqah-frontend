@@ -34,8 +34,11 @@ abstract final class Sizes {
 
   static const double _navBarClearance = 104;
 
-  /// True when the shell shows the left rail (every platform but phones).
+  /// True when the shell shows the left rail (desktop apps). Phones and the web
+  /// use the bottom bar: on the web the app shows as a phone-sized screen
+  /// ([PhoneFrame]).
   static bool get usesNavRail =>
+      !kIsWeb &&
       defaultTargetPlatform != TargetPlatform.android &&
       defaultTargetPlatform != TargetPlatform.iOS;
 
