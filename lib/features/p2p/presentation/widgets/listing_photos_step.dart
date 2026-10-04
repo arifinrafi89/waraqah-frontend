@@ -47,6 +47,7 @@ class ListingPhotosStep extends ConsumerWidget {
                 label: l10n.photoSlot(slot),
                 bytes: notifier.photoBytes[slot],
                 held: draft.photos.contains(slot),
+                url: draft.photoUrls[slot],
                 needed: ListingRules.needsPhoto(draft, slot),
                 onPick: () => pick(slot),
                 onRemove: () => notifier.removePhoto(slot),

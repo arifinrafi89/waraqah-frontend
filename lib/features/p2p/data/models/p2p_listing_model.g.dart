@@ -24,6 +24,11 @@ _P2pListingModel _$P2pListingModelFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const <String>[],
+      photoUrls:
+          (json['photoUrls'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as String),
+          ) ??
+          const <String, String>{},
       isNegotiable: json['isNegotiable'] as bool? ?? false,
       handover:
           $enumDecodeNullable(_$HandoverMethodEnumMap, json['handover']) ??
@@ -54,6 +59,7 @@ Map<String, dynamic> _$P2pListingModelToJson(_P2pListingModel instance) =>
       'condition': _$BookConditionEnumMap[instance.condition]!,
       'flags': instance.flags,
       'photos': instance.photos,
+      'photoUrls': instance.photoUrls,
       'isNegotiable': instance.isNegotiable,
       'handover': _$HandoverMethodEnumMap[instance.handover]!,
       'status': _$P2pListingStatusEnumMap[instance.status]!,

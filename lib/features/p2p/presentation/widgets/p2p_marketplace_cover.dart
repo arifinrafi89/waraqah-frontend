@@ -6,7 +6,10 @@ import '../../../../core/widgets/cover_art.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../catalog/presentation/widgets/used_labels.dart';
 import '../../domain/entities/p2p_listing.dart';
+import 'listing_cover.dart';
 
+/// A Listing's cover with its condition badge: the seller's front-cover
+/// photo when there is one.
 class P2pMarketplaceCover extends StatelessWidget {
   const P2pMarketplaceCover({super.key, required this.listing});
 
@@ -26,12 +29,16 @@ class P2pMarketplaceCover extends StatelessWidget {
     return Stack(
       fit: StackFit.expand,
       children: [
-        CoverArt(
-          title: listing.title,
-          seed: listing.coverSeed,
-          aspectRatio: null,
+        ListingCover(
+          photoUrl: listing.photoUrls['front'],
           radius: 14,
-          centerTitle: true,
+          art: CoverArt(
+            title: listing.title,
+            seed: listing.coverSeed,
+            aspectRatio: null,
+            radius: 14,
+            centerTitle: true,
+          ),
         ),
         Positioned(
           top: 8,

@@ -22,6 +22,9 @@ abstract class QueuedListing with _$QueuedListing {
 
     /// Which photos the seller added: front, back, spine, inside, damage.
     @Default(<String>[]) List<String> photos,
+
+    /// The thumbnail of each slot the server stored a photo for.
+    @Default(<String, String>{}) Map<String, String> photoUrls,
     @Default(0) int coverSeed,
     @Default(0) int sellerStrikes,
     int? newPriceBdt,

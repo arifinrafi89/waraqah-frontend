@@ -11,10 +11,11 @@ import '../../../handled_sale/presentation/widgets/handled_sale_card.dart';
 import '../../../inbox/presentation/widgets/listing_conversations.dart';
 import '../../domain/entities/p2p_listing.dart';
 import 'listing_facts.dart';
+import 'listing_photo_gallery.dart';
 import 'p2p_marketplace_cover.dart';
 import 'seller_row.dart';
 
-/// Everything about one used copy: cover, title, who's selling and where,
+/// Everything about one used copy: cover, title, the seller's photos, who's selling and where,
 /// condition and price, and the seller's note. On the reader's own
 /// listing, the buyers' conversations follow.
 class ListingDetails extends StatelessWidget {
@@ -70,6 +71,10 @@ class ListingDetails extends StatelessWidget {
         ),
         const SizedBox(height: Insets.md),
         ListingFacts(listing: listing),
+        if (listing.photoUrls.isNotEmpty) ...[
+          const SizedBox(height: Insets.lg),
+          ListingPhotoGallery(listing: listing),
+        ],
         if (!listing.isMine && listing.isAvailable) ...[
           const SizedBox(height: Insets.lg),
           HandledSaleCard(listingId: listing.id, priceBdt: listing.priceBdt),

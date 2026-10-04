@@ -16,7 +16,8 @@ T _$identity<T>(T value) => value;
 mixin _$QueuedListing {
 
  String get id; String get title; String get sellerId; String get sellerName; int get priceBdt; BookCondition get condition; List<String> get flags;/// Which photos the seller added: front, back, spine, inside, damage.
- List<String> get photos; int get coverSeed; int get sellerStrikes; int? get newPriceBdt; String? get note;
+ List<String> get photos;/// The thumbnail of each slot the server stored a photo for.
+ Map<String, String> get photoUrls; int get coverSeed; int get sellerStrikes; int? get newPriceBdt; String? get note;
 /// Create a copy of QueuedListing
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,20 +29,20 @@ $QueuedListingCopyWith<QueuedListing> get copyWith => _$QueuedListingCopyWithImp
 @override
 bool operator ==(Object other) {
   final _this = this as QueuedListing;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueuedListing&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.title, _this.title) || other.title == _this.title)&&(identical(other.sellerId, _this.sellerId) || other.sellerId == _this.sellerId)&&(identical(other.sellerName, _this.sellerName) || other.sellerName == _this.sellerName)&&(identical(other.priceBdt, _this.priceBdt) || other.priceBdt == _this.priceBdt)&&(identical(other.condition, _this.condition) || other.condition == _this.condition)&&const DeepCollectionEquality().equals(other.flags, _this.flags)&&const DeepCollectionEquality().equals(other.photos, _this.photos)&&(identical(other.coverSeed, _this.coverSeed) || other.coverSeed == _this.coverSeed)&&(identical(other.sellerStrikes, _this.sellerStrikes) || other.sellerStrikes == _this.sellerStrikes)&&(identical(other.newPriceBdt, _this.newPriceBdt) || other.newPriceBdt == _this.newPriceBdt)&&(identical(other.note, _this.note) || other.note == _this.note));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is QueuedListing&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.title, _this.title) || other.title == _this.title)&&(identical(other.sellerId, _this.sellerId) || other.sellerId == _this.sellerId)&&(identical(other.sellerName, _this.sellerName) || other.sellerName == _this.sellerName)&&(identical(other.priceBdt, _this.priceBdt) || other.priceBdt == _this.priceBdt)&&(identical(other.condition, _this.condition) || other.condition == _this.condition)&&const DeepCollectionEquality().equals(other.flags, _this.flags)&&const DeepCollectionEquality().equals(other.photos, _this.photos)&&const DeepCollectionEquality().equals(other.photoUrls, _this.photoUrls)&&(identical(other.coverSeed, _this.coverSeed) || other.coverSeed == _this.coverSeed)&&(identical(other.sellerStrikes, _this.sellerStrikes) || other.sellerStrikes == _this.sellerStrikes)&&(identical(other.newPriceBdt, _this.newPriceBdt) || other.newPriceBdt == _this.newPriceBdt)&&(identical(other.note, _this.note) || other.note == _this.note));
 }
 
 
 @override
 int get hashCode {
   final _this = this as QueuedListing;
-  return Object.hash(runtimeType,_this.id,_this.title,_this.sellerId,_this.sellerName,_this.priceBdt,_this.condition,const DeepCollectionEquality().hash(_this.flags),const DeepCollectionEquality().hash(_this.photos),_this.coverSeed,_this.sellerStrikes,_this.newPriceBdt,_this.note);
+  return Object.hash(runtimeType,_this.id,_this.title,_this.sellerId,_this.sellerName,_this.priceBdt,_this.condition,const DeepCollectionEquality().hash(_this.flags),const DeepCollectionEquality().hash(_this.photos),const DeepCollectionEquality().hash(_this.photoUrls),_this.coverSeed,_this.sellerStrikes,_this.newPriceBdt,_this.note);
 }
 
 @override
 String toString() {
   final _this = this as QueuedListing;
-  return 'QueuedListing(id: ${_this.id}, title: ${_this.title}, sellerId: ${_this.sellerId}, sellerName: ${_this.sellerName}, priceBdt: ${_this.priceBdt}, condition: ${_this.condition}, flags: ${_this.flags}, photos: ${_this.photos}, coverSeed: ${_this.coverSeed}, sellerStrikes: ${_this.sellerStrikes}, newPriceBdt: ${_this.newPriceBdt}, note: ${_this.note})';
+  return 'QueuedListing(id: ${_this.id}, title: ${_this.title}, sellerId: ${_this.sellerId}, sellerName: ${_this.sellerName}, priceBdt: ${_this.priceBdt}, condition: ${_this.condition}, flags: ${_this.flags}, photos: ${_this.photos}, photoUrls: ${_this.photoUrls}, coverSeed: ${_this.coverSeed}, sellerStrikes: ${_this.sellerStrikes}, newPriceBdt: ${_this.newPriceBdt}, note: ${_this.note})';
 }
 
 
@@ -52,7 +53,7 @@ abstract mixin class $QueuedListingCopyWith<$Res>  {
   factory $QueuedListingCopyWith(QueuedListing value, $Res Function(QueuedListing) _then) = _$QueuedListingCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, int coverSeed, int sellerStrikes, int? newPriceBdt, String? note
+ String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, Map<String, String> photoUrls, int coverSeed, int sellerStrikes, int? newPriceBdt, String? note
 });
 
 
@@ -69,7 +70,7 @@ class _$QueuedListingCopyWithImpl<$Res>
 
 /// Create a copy of QueuedListing
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? coverSeed = null,Object? sellerStrikes = null,Object? newPriceBdt = freezed,Object? note = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? photoUrls = null,Object? coverSeed = null,Object? sellerStrikes = null,Object? newPriceBdt = freezed,Object? note = freezed,}) {
   return _then(QueuedListing(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -79,7 +80,8 @@ as String,priceBdt: null == priceBdt ? _self.priceBdt : priceBdt // ignore: cast
 as int,condition: null == condition ? _self.condition : condition // ignore: cast_nullable_to_non_nullable
 as BookCondition,flags: null == flags ? _self.flags : flags // ignore: cast_nullable_to_non_nullable
 as List<String>,photos: null == photos ? _self.photos : photos // ignore: cast_nullable_to_non_nullable
-as List<String>,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
+as List<String>,photoUrls: null == photoUrls ? _self.photoUrls : photoUrls // ignore: cast_nullable_to_non_nullable
+as Map<String, String>,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
 as int,sellerStrikes: null == sellerStrikes ? _self.sellerStrikes : sellerStrikes // ignore: cast_nullable_to_non_nullable
 as int,newPriceBdt: freezed == newPriceBdt ? _self.newPriceBdt : newPriceBdt // ignore: cast_nullable_to_non_nullable
 as int?,note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
@@ -168,10 +170,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  int coverSeed,  int sellerStrikes,  int? newPriceBdt,  String? note)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  int coverSeed,  int sellerStrikes,  int? newPriceBdt,  String? note)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _QueuedListing() when $default != null:
-return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.coverSeed,_that.sellerStrikes,_that.newPriceBdt,_that.note);case _:
+return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.coverSeed,_that.sellerStrikes,_that.newPriceBdt,_that.note);case _:
   return orElse();
 
 }
@@ -189,10 +191,10 @@ return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.price
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  int coverSeed,  int sellerStrikes,  int? newPriceBdt,  String? note)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  int coverSeed,  int sellerStrikes,  int? newPriceBdt,  String? note)  $default,) {final _that = this;
 switch (_that) {
 case _QueuedListing():
-return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.coverSeed,_that.sellerStrikes,_that.newPriceBdt,_that.note);case _:
+return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.coverSeed,_that.sellerStrikes,_that.newPriceBdt,_that.note);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -209,10 +211,10 @@ return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.price
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  int coverSeed,  int sellerStrikes,  int? newPriceBdt,  String? note)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  int coverSeed,  int sellerStrikes,  int? newPriceBdt,  String? note)?  $default,) {final _that = this;
 switch (_that) {
 case _QueuedListing() when $default != null:
-return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.coverSeed,_that.sellerStrikes,_that.newPriceBdt,_that.note);case _:
+return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.coverSeed,_that.sellerStrikes,_that.newPriceBdt,_that.note);case _:
   return null;
 
 }
@@ -224,7 +226,7 @@ return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.price
 
 
 class _QueuedListing implements QueuedListing {
-  const _QueuedListing({required this.id, required this.title, required this.sellerId, required this.sellerName, required this.priceBdt, required this.condition,  List<String> flags = const <String>[],  List<String> photos = const <String>[], this.coverSeed = 0, this.sellerStrikes = 0, this.newPriceBdt, this.note}): _flags = flags,_photos = photos;
+  const _QueuedListing({required this.id, required this.title, required this.sellerId, required this.sellerName, required this.priceBdt, required this.condition,  List<String> flags = const <String>[],  List<String> photos = const <String>[],  Map<String, String> photoUrls = const <String, String>{}, this.coverSeed = 0, this.sellerStrikes = 0, this.newPriceBdt, this.note}): _flags = flags,_photos = photos,_photoUrls = photoUrls;
   
 
 @override final  String id;
@@ -249,6 +251,15 @@ class _QueuedListing implements QueuedListing {
   return EqualUnmodifiableListView(_photos);
 }
 
+/// The thumbnail of each slot the server stored a photo for.
+ final  Map<String, String> _photoUrls;
+/// The thumbnail of each slot the server stored a photo for.
+@override@JsonKey() Map<String, String> get photoUrls {
+  if (_photoUrls is EqualUnmodifiableMapView) return _photoUrls;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(_photoUrls);
+}
+
 @override@JsonKey() final  int coverSeed;
 @override@JsonKey() final  int sellerStrikes;
 @override final  int? newPriceBdt;
@@ -264,18 +275,18 @@ _$QueuedListingCopyWith<_QueuedListing> get copyWith => __$QueuedListingCopyWith
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _QueuedListing&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.sellerId, sellerId) || other.sellerId == sellerId)&&(identical(other.sellerName, sellerName) || other.sellerName == sellerName)&&(identical(other.priceBdt, priceBdt) || other.priceBdt == priceBdt)&&(identical(other.condition, condition) || other.condition == condition)&&const DeepCollectionEquality().equals(other.flags, _flags)&&const DeepCollectionEquality().equals(other.photos, _photos)&&(identical(other.coverSeed, coverSeed) || other.coverSeed == coverSeed)&&(identical(other.sellerStrikes, sellerStrikes) || other.sellerStrikes == sellerStrikes)&&(identical(other.newPriceBdt, newPriceBdt) || other.newPriceBdt == newPriceBdt)&&(identical(other.note, note) || other.note == note));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _QueuedListing&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.sellerId, sellerId) || other.sellerId == sellerId)&&(identical(other.sellerName, sellerName) || other.sellerName == sellerName)&&(identical(other.priceBdt, priceBdt) || other.priceBdt == priceBdt)&&(identical(other.condition, condition) || other.condition == condition)&&const DeepCollectionEquality().equals(other.flags, _flags)&&const DeepCollectionEquality().equals(other.photos, _photos)&&const DeepCollectionEquality().equals(other.photoUrls, _photoUrls)&&(identical(other.coverSeed, coverSeed) || other.coverSeed == coverSeed)&&(identical(other.sellerStrikes, sellerStrikes) || other.sellerStrikes == sellerStrikes)&&(identical(other.newPriceBdt, newPriceBdt) || other.newPriceBdt == newPriceBdt)&&(identical(other.note, note) || other.note == note));
 }
 
 
 @override
 int get hashCode {
-    return Object.hash(runtimeType,id,title,sellerId,sellerName,priceBdt,condition,const DeepCollectionEquality().hash(_flags),const DeepCollectionEquality().hash(_photos),coverSeed,sellerStrikes,newPriceBdt,note);
+    return Object.hash(runtimeType,id,title,sellerId,sellerName,priceBdt,condition,const DeepCollectionEquality().hash(_flags),const DeepCollectionEquality().hash(_photos),const DeepCollectionEquality().hash(_photoUrls),coverSeed,sellerStrikes,newPriceBdt,note);
 }
 
 @override
 String toString() {
-    return 'QueuedListing(id: $id, title: $title, sellerId: $sellerId, sellerName: $sellerName, priceBdt: $priceBdt, condition: $condition, flags: $flags, photos: $photos, coverSeed: $coverSeed, sellerStrikes: $sellerStrikes, newPriceBdt: $newPriceBdt, note: $note)';
+    return 'QueuedListing(id: $id, title: $title, sellerId: $sellerId, sellerName: $sellerName, priceBdt: $priceBdt, condition: $condition, flags: $flags, photos: $photos, photoUrls: $photoUrls, coverSeed: $coverSeed, sellerStrikes: $sellerStrikes, newPriceBdt: $newPriceBdt, note: $note)';
 }
 
 
@@ -286,7 +297,7 @@ abstract mixin class _$QueuedListingCopyWith<$Res> implements $QueuedListingCopy
   factory _$QueuedListingCopyWith(_QueuedListing value, $Res Function(_QueuedListing) _then) = __$QueuedListingCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, int coverSeed, int sellerStrikes, int? newPriceBdt, String? note
+ String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, Map<String, String> photoUrls, int coverSeed, int sellerStrikes, int? newPriceBdt, String? note
 });
 
 
@@ -303,7 +314,7 @@ class __$QueuedListingCopyWithImpl<$Res>
 
 /// Create a copy of QueuedListing
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? coverSeed = null,Object? sellerStrikes = null,Object? newPriceBdt = freezed,Object? note = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? photoUrls = null,Object? coverSeed = null,Object? sellerStrikes = null,Object? newPriceBdt = freezed,Object? note = freezed,}) {
   return _then(_QueuedListing(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -313,7 +324,8 @@ as String,priceBdt: null == priceBdt ? _self.priceBdt : priceBdt // ignore: cast
 as int,condition: null == condition ? _self.condition : condition // ignore: cast_nullable_to_non_nullable
 as BookCondition,flags: null == flags ? _self._flags : flags // ignore: cast_nullable_to_non_nullable
 as List<String>,photos: null == photos ? _self._photos : photos // ignore: cast_nullable_to_non_nullable
-as List<String>,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
+as List<String>,photoUrls: null == photoUrls ? _self._photoUrls : photoUrls // ignore: cast_nullable_to_non_nullable
+as Map<String, String>,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
 as int,sellerStrikes: null == sellerStrikes ? _self.sellerStrikes : sellerStrikes // ignore: cast_nullable_to_non_nullable
 as int,newPriceBdt: freezed == newPriceBdt ? _self.newPriceBdt : newPriceBdt // ignore: cast_nullable_to_non_nullable
 as int?,note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable

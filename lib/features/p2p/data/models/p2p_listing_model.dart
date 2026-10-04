@@ -19,6 +19,9 @@ abstract class P2pListingModel with _$P2pListingModel {
     @Default(BookCondition.good) BookCondition condition,
     @Default(<String>[]) List<String> flags,
     @Default(<String>[]) List<String> photos,
+
+    /// Contract v1.1: the thumbnail URL of each slot with an uploaded photo.
+    @Default(<String, String>{}) Map<String, String> photoUrls,
     @Default(false) bool isNegotiable,
     @Default(HandoverMethod.meetInPerson) HandoverMethod handover,
     @Default(P2pListingStatus.live) P2pListingStatus status,
@@ -51,6 +54,7 @@ extension P2pListingModelX on P2pListingModel {
     condition: condition,
     flags: flags,
     photos: photos,
+    photoUrls: photoUrls,
     isNegotiable: isNegotiable,
     handover: handover,
     status: status,
