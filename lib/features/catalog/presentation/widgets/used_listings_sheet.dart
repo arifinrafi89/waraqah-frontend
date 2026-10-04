@@ -15,6 +15,7 @@ Future<P2pListing?> showUsedListingsSheet(
   BuildContext context,
   List<P2pListing> listings,
 ) => showModalBottomSheet<P2pListing>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   isScrollControlled: true,

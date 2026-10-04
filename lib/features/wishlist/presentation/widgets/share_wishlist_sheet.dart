@@ -18,6 +18,7 @@ import '../providers/shared_wishlist_providers.dart';
 /// way to see the list the way friends will.
 Future<void> showShareWishlistSheet(BuildContext context) =>
     showModalBottomSheet<void>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       isScrollControlled: true,

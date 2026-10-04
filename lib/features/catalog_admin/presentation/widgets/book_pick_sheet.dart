@@ -11,6 +11,7 @@ import 'admin_list_skeleton.dart';
 /// Finds a Book by title or Author. Closes with its id.
 Future<String?> showBookPicker(BuildContext context) =>
     showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

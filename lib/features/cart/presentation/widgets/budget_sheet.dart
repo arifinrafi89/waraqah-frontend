@@ -15,6 +15,7 @@ Future<List<UsedSwap>?> showBudgetSheet(
   BuildContext context,
   SmartBasket basket,
 ) => showModalBottomSheet<List<UsedSwap>>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

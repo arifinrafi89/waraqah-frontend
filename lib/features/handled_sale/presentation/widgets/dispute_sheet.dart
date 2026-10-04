@@ -15,6 +15,7 @@ import 'sale_labels.dart';
 /// for the moderator. Answers the dispute, or `null` when dismissed.
 Future<DisputeDraft?> showDisputeSheet(BuildContext context, String saleId) =>
     showModalBottomSheet<DisputeDraft>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       isScrollControlled: true,

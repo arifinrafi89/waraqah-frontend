@@ -14,6 +14,7 @@ typedef ReviewInput = ({int stars, String text});
 /// Reader closes it.
 Future<ReviewInput?> showReviewSheet(BuildContext context, {Review? mine}) =>
     showModalBottomSheet<ReviewInput>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       builder: (_) => _ReviewSheet(mine: mine),

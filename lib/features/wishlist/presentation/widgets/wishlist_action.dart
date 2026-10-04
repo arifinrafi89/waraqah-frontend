@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/models/book.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../auth/auth_routes.dart';
+import '../../../auth/presentation/providers/auth_providers.dart';
 import '../../../cart/domain/entities/cart_item_ref.dart';
 import '../../../cart/presentation/widgets/add_to_cart_action.dart';
 import '../../wishlist_routes.dart';
@@ -29,6 +31,12 @@ extension WishlistAction on WidgetRef {
     final messenger = ScaffoldMessenger.of(context);
     final router = GoRouter.of(context);
     final wishlist = read(wishlistProvider.notifier);
+
+    // The wishlist belongs to a reader: guests sign in first.
+    if (read(sessionProvider) == null) {
+      router.push(AuthRoutes.login);
+      return false;
+    }
 
     var ok = true;
     try {

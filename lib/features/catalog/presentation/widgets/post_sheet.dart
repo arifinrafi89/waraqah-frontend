@@ -17,6 +17,7 @@ Future<bool?> showPostSheet(
   required int maxLength,
   required Future<void> Function(String text) onPost,
 }) => showModalBottomSheet<bool>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

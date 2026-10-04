@@ -14,6 +14,7 @@ import 'record_sheet.dart';
 /// the picked id.
 Future<String?> showRecordPicker(BuildContext context, RecordKind kind) =>
     showModalBottomSheet<String>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

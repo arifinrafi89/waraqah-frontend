@@ -17,7 +17,7 @@ void main() {
   testWidgets('a friend opens a shared wishlist and adds a book to the cart', (
     tester,
   ) async {
-    await openApp(tester, WishlistRoutes.sharedFor('wl-nabila'));
+    await openApp(tester, WishlistRoutes.sharedFor('wl-nabila'), role: 'reader');
 
     expect(tester.takeException(), isNull);
     expect(find.text("Nabila's wishlist"), findsOneWidget);

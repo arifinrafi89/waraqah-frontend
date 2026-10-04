@@ -22,7 +22,7 @@ void main() {
   });
 
   testWidgets('add to cart confirms and fills the badge', (tester) async {
-    await openApp(tester, _atomic);
+    await openApp(tester, _atomic, role: 'reader');
 
     await tester.tap(find.byTooltip('Add to cart'));
     await settle(tester);
@@ -34,7 +34,7 @@ void main() {
   });
 
   testWidgets('the added-to-cart message goes away by itself', (tester) async {
-    await openApp(tester, _atomic);
+    await openApp(tester, _atomic, role: 'reader');
     await tester.tap(find.byTooltip('Add to cart'));
     await settle(tester);
     expect(find.text('Added to cart'), findsOneWidget);
@@ -50,7 +50,7 @@ void main() {
   testWidgets('buy now opens the cart; quantities change the subtotal', (
     tester,
   ) async {
-    final router = await openApp(tester, _atomic);
+    final router = await openApp(tester, _atomic, role: 'reader');
 
     await tester.tap(find.text('Buy now'));
     await settle(tester);
@@ -77,7 +77,7 @@ void main() {
 
   testWidgets('+ stops at the stock and stays on the cart', (tester) async {
     // The hardcover has 2 in stock.
-    final router = await openApp(tester, _atomic);
+    final router = await openApp(tester, _atomic, role: 'reader');
     await tester.tap(find.text('Hardcover · English'));
     await tester.pump();
     await tester.tap(find.text('Buy now'));

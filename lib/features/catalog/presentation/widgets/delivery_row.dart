@@ -66,6 +66,7 @@ class DeliveryRow extends ConsumerWidget {
     final l10n = AppL10n.of(context)!;
     final current = ref.read(deliveryAreaProvider);
     final picked = await showModalBottomSheet<DeliveryArea>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       builder: (sheet) => SafeArea(

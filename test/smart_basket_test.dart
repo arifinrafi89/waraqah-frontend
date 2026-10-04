@@ -66,6 +66,7 @@ void main() {
     final router = await openApp(
       tester,
       CatalogRoutes.bookDetailFor('bk-atomic'),
+      role: 'reader',
     );
     await tester.tap(find.byTooltip('Add to cart'));
     await settle(tester);

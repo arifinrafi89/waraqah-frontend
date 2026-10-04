@@ -54,7 +54,7 @@ void main() {
   });
 
   testWidgets('add to cart adds the chosen edition', (tester) async {
-    await openApp(tester, _atomic);
+    await openApp(tester, _atomic, role: 'reader');
 
     await tester.tap(find.text('Hardcover · English'));
     await tester.pump();

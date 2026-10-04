@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 
+import '../../../../core/network/api_exception.dart';
 import '../../../../core/network/session_tokens.dart';
 import '../models/app_user_model.dart';
 import 'session_store.dart';
@@ -33,7 +34,13 @@ class StoredSessionTokens implements SessionTokens {
       return data['accessToken'] as String?;
     } on DioException catch (e) {
       // Only a refusal ends the session; a dropped connection may work next time.
-      if (e.response?.statusCode == 401) {
+      // The shared client turns errors into an [ApiException] (it drops the response),
+      // so the status is read from there as well.
+      final error = e.error;
+      final status =
+          e.response?.statusCode ??
+          (error is ApiException ? error.statusCode : null);
+      if (status == 401) {
         await _store.clear();
         _expiry.expire();
       }
