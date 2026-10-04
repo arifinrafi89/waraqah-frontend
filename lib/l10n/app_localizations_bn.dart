@@ -452,6 +452,10 @@ class AppL10nBn extends AppL10n {
   String get authGoogleFailed => 'গুগল সাইন-ইন হয়নি। আবার চেষ্টা করুন।';
 
   @override
+  String get authGoogleWebOnly =>
+      'গুগল সাইন-ইন আপাতত শুধু ওয়েব অ্যাপে কাজ করে। এখানে ইমেইল দিয়ে লগ ইন করুন।';
+
+  @override
   String get authSignUpRefused =>
       'এই ইমেইল দিয়ে সাইন-আপ শুরু করা গেল না। এতে আগে থেকেই অ্যাকাউন্ট থাকতে পারে।';
 

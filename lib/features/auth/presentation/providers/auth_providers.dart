@@ -69,8 +69,10 @@ class SessionNotifier extends Notifier<AppUser?> {
     state = await ref.read(authRepositoryProvider).rename(name);
   }
 
-  Future<void> signInWithGoogle() async {
-    state = await ref.read(authActionsProvider).signInWithGoogle();
+  Future<void> signInWithGoogle({String? idToken}) async {
+    state = await ref
+        .read(authActionsProvider)
+        .signInWithGoogle(idToken: idToken);
   }
 
   Future<void> requestSignUpOtp({

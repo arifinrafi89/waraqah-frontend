@@ -919,6 +919,12 @@ abstract class AppL10n {
   /// **'Google sign-in did not work. Try again.'**
   String get authGoogleFailed;
 
+  /// No description provided for @authGoogleWebOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Google sign-in works in the web app for now. Log in with your email here.'**
+  String get authGoogleWebOnly;
+
   /// No description provided for @authSignUpRefused.
   ///
   /// In en, this message translates to:

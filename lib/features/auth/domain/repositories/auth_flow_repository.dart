@@ -1,7 +1,9 @@
 import '../entities/app_user.dart';
 
 abstract interface class AuthFlowRepository {
-  Future<AppUser> signInWithGoogle();
+  /// [idToken] is Google's ID token for the reader; the server verifies it
+  /// (the fake API needs none).
+  Future<AppUser> signInWithGoogle({String? idToken});
 
   Future<void> requestSignUpOtp({
     required String name,

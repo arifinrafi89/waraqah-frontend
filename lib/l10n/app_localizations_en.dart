@@ -464,6 +464,10 @@ class AppL10nEn extends AppL10n {
   String get authGoogleFailed => 'Google sign-in did not work. Try again.';
 
   @override
+  String get authGoogleWebOnly =>
+      'Google sign-in works in the web app for now. Log in with your email here.';
+
+  @override
   String get authSignUpRefused =>
       'We could not start sign-up with that email. It may already have an account.';
 

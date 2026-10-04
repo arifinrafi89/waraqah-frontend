@@ -149,6 +149,7 @@
   "authWrongCode": "Wrong code. Try again.",
   "authWrongCredentials": "Wrong email or password.",
   "authGoogleFailed": "Google sign-in did not work. Try again.",
+  "authGoogleWebOnly": "Google sign-in works in the web app for now. Log in with your email here.",
   "authSignUpRefused": "We could not start sign-up with that email. It may already have an account.",
   "authInvalidMobileNumber": "Enter a valid Bangladesh mobile number.",
   "authForgotTitle": "Reset your password",

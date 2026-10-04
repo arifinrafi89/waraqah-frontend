@@ -26,8 +26,8 @@ class AuthRepositoryImpl implements AuthRepository, AuthFlowRepository {
   }
 
   @override
-  Future<AppUser> signInWithGoogle() async {
-    final user = await _source.signInWithGoogle();
+  Future<AppUser> signInWithGoogle({String? idToken}) async {
+    final user = await _source.signInWithGoogle(idToken: idToken);
     await _store.write(user);
     return user.toEntity();
   }
