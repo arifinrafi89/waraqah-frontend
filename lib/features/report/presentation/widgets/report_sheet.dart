@@ -17,6 +17,7 @@ Future<ReportRequest?> showReportSheet(
   BuildContext context,
   ReportTarget target,
 ) => showModalBottomSheet<ReportRequest>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   isScrollControlled: true,

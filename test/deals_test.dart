@@ -58,7 +58,7 @@ void main() {
   testWidgets('a book in a bundle deals it, and it goes in the cart', (
     tester,
   ) async {
-    await openApp(tester, CatalogRoutes.bookDetailFor('bk-atomic'));
+    await openApp(tester, CatalogRoutes.bookDetailFor('bk-atomic'), role: 'reader');
     await tester.scrollUntilVisible(
       find.text('Add bundle to cart'),
       250,

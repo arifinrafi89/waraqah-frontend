@@ -16,6 +16,7 @@ Future<String?> showDecisionReasonSheet(
   BuildContext context,
   ListingDecision decision,
 ) => showModalBottomSheet<String>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   isScrollControlled: true,

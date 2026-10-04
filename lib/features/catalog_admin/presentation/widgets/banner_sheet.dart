@@ -18,6 +18,7 @@ import 'rule_error_labels.dart';
 /// Adds a Banner, or edits or deletes one, with a live preview.
 Future<void> showBannerSheet(BuildContext context, [Banner? banner]) =>
     showModalBottomSheet<void>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

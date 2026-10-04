@@ -60,7 +60,7 @@ void main() {
   testWidgets('Certified Used goes in the cart, grouped apart from new', (
     tester,
   ) async {
-    final router = await openApp(tester, _atomic);
+    final router = await openApp(tester, _atomic, role: 'reader');
     await tester.tap(find.byTooltip('Add to cart').first);
     await _snackGone(tester);
 

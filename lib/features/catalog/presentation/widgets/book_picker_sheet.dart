@@ -17,6 +17,7 @@ Future<void> showBookPickerSheet(
   required Iterable<String> picked,
   required void Function(String bookId, bool add) onPick,
 }) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

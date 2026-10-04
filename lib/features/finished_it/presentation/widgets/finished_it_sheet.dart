@@ -12,6 +12,7 @@ import 'finished_it_choices.dart';
 /// it back to Waraqah, or keep it.
 Future<void> showFinishedItSheet(BuildContext context, String bookId) =>
     showModalBottomSheet<void>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       isScrollControlled: true,

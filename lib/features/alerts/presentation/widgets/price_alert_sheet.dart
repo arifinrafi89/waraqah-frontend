@@ -20,6 +20,7 @@ Future<int?> showPriceAlertSheet(
   required int currentBdt,
   int? targetBdt,
 }) => showModalBottomSheet<int>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   builder: (_) => _PriceAlertForm(currentBdt: currentBdt, targetBdt: targetBdt),

@@ -18,6 +18,7 @@ Future<Edition?> showEditionSheet(
   required List<Edition> siblings,
   Edition? edition,
 }) => showModalBottomSheet<Edition>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

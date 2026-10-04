@@ -15,6 +15,7 @@ typedef ShelfChoice = ({Shelf? shelf});
 Future<ShelfChoice?> showShelfSheet(BuildContext context, Shelf? current) {
   final l10n = AppL10n.of(context)!;
   return showModalBottomSheet<ShelfChoice>(
+    useRootNavigator: true,
     context: context,
     showDragHandle: true,
     builder: (context) => SafeArea(

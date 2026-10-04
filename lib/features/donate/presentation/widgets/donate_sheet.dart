@@ -22,6 +22,7 @@ Future<void> showDonateSheet(
   Recipient recipient,
   RecipientNeed need,
 ) => showModalBottomSheet<void>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   isScrollControlled: true,

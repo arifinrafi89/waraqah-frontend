@@ -40,7 +40,13 @@ void main() {
   setUpAll(() => GoogleFonts.config.allowRuntimeFetching = false);
 
   testWidgets('guests are asked to log in first', (tester) async {
-    final router = await _toCheckout(tester, role: null);
+    // The cart belongs to a reader, so a guest is sent to log in at Buy now.
+    final router = await openApp(
+      tester,
+      CatalogRoutes.bookDetailFor('bk-atomic'),
+    );
+    await tester.tap(find.text('Buy now'));
+    await settle(tester);
     expect(pathOf(router), AuthRoutes.login);
   });
 

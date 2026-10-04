@@ -20,6 +20,7 @@ Future<CatalogRecord?> showRecordSheet(
   RecordKind kind, [
   CatalogRecord record = const CatalogRecord(),
 ]) => showModalBottomSheet<CatalogRecord>(
+  useRootNavigator: true,
   context: context,
   isScrollControlled: true,
   showDragHandle: true,

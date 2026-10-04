@@ -22,6 +22,7 @@ class SearchFilterPill extends ConsumerWidget {
       ),
       label: Text(AppL10n.of(context)!.searchFilter),
       onPressed: () => showModalBottomSheet<void>(
+        useRootNavigator: true,
         context: context,
         showDragHandle: true,
         isScrollControlled: true,

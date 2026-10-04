@@ -22,6 +22,7 @@ typedef ReturnChoice = ({
 /// photos. Answers the choice, or `null` if the reader closes the sheet.
 Future<ReturnChoice?> showReturnSheet(BuildContext context) =>
     showModalBottomSheet<ReturnChoice>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

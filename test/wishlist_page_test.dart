@@ -23,7 +23,7 @@ void main() {
   testWidgets('the heart saves a book, and it shows on the wishlist', (
     tester,
   ) async {
-    final router = await openApp(tester, _atomic);
+    final router = await openApp(tester, _atomic, role: 'reader');
 
     await tester.tap(find.byTooltip('Save to wishlist'));
     await settle(tester);
@@ -39,7 +39,7 @@ void main() {
   testWidgets('move to cart empties the wishlist and fills the cart', (
     tester,
   ) async {
-    final router = await openApp(tester, _atomic);
+    final router = await openApp(tester, _atomic, role: 'reader');
     await tester.tap(find.byTooltip('Save to wishlist'));
     await settle(tester);
     router.push(WishlistRoutes.wishlist);
@@ -57,7 +57,7 @@ void main() {
   testWidgets('save for later moves a cart line to the wishlist', (
     tester,
   ) async {
-    final router = await openApp(tester, _atomic);
+    final router = await openApp(tester, _atomic, role: 'reader');
     await tester.tap(find.text('Buy now'));
     await settle(tester);
     expect(router.state.uri.path, CartRoutes.cart);

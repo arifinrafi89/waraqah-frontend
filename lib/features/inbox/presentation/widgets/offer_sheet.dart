@@ -28,6 +28,7 @@ Future<OfferDraft?> showOfferSheet(
   required bool negotiable,
   required HandoverMethod preferred,
 }) => showModalBottomSheet<OfferDraft>(
+  useRootNavigator: true,
   context: context,
   showDragHandle: true,
   isScrollControlled: true,

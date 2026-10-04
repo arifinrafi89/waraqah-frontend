@@ -58,6 +58,7 @@ class CouponsAdminTab extends ConsumerWidget {
     final messenger = ScaffoldMessenger.of(context);
     final created = AppL10n.of(context)!.adminOrderCouponCreated;
     final saved = await showModalBottomSheet<bool>(
+      useRootNavigator: true,
       context: context,
       isScrollControlled: true,
       showDragHandle: true,

@@ -31,6 +31,7 @@ class SearchSortPill extends ConsumerWidget {
   void _open(BuildContext context, WidgetRef ref) {
     final hasQuery = ref.read(searchQueryProvider).trim().isNotEmpty;
     showModalBottomSheet<void>(
+      useRootNavigator: true,
       context: context,
       showDragHandle: true,
       builder: (sheet) => Consumer(
