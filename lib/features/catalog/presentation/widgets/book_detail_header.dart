@@ -29,6 +29,7 @@ class BookDetailHeader extends StatelessWidget {
           child: CoverArt(
             title: book.localCoverLabel(context),
             seed: book.coverSeed,
+            imageUrl: book.coverUrl,
             radius: Radii.md,
           ),
         ),

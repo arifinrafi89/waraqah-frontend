@@ -15,6 +15,7 @@ class CoverArt extends StatelessWidget {
     super.key,
     required this.title,
     required this.seed,
+    this.imageUrl,
     this.aspectRatio = 3 / 4,
     this.fontSize = 13,
     this.radius,
@@ -25,6 +26,9 @@ class CoverArt extends StatelessWidget {
 
   final String title;
   final int seed;
+
+  /// A picture of the book. The gradient shows while it loads and if it fails.
+  final String? imageUrl;
 
   /// `null` fills the parent instead, e.g. inside an [Expanded].
   final double? aspectRatio;
@@ -66,6 +70,17 @@ class CoverArt extends StatelessWidget {
               ),
             ),
           ),
+          if (imageUrl != null)
+            ClipRRect(
+              borderRadius: BorderRadius.circular(radius ?? 0),
+              child: Image.network(
+                imageUrl!,
+                fit: BoxFit.cover,
+                frameBuilder: (_, image, frame, sync) =>
+                    frame == null && !sync ? const SizedBox.shrink() : image,
+                errorBuilder: (_, _, _) => const SizedBox.shrink(),
+              ),
+            ),
           if (badge != null)
             Positioned(top: Insets.sm, left: Insets.sm, child: badge!),
           if (cornerTag != null)

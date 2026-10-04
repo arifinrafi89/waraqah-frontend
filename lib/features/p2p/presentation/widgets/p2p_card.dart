@@ -30,7 +30,7 @@ class P2pCard extends StatelessWidget {
             children: [
               Expanded(
                 child: ListingCover(
-                  photoUrl: listing.photoUrls['front'],
+                  photoUrl: listing.photoUrls['front'] ?? listing.coverUrl,
                   art: CoverArt(
                     title: listing.title,
                     seed: listing.coverSeed,

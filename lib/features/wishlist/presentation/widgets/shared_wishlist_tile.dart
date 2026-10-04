@@ -40,6 +40,7 @@ class SharedWishlistTile extends ConsumerWidget {
               child: CoverArt(
                 title: book.coverLabel,
                 seed: book.coverSeed,
+                imageUrl: book.coverUrl,
                 aspectRatio: Sizes.listThumbWidth / Sizes.listThumbHeight,
                 fontSize: 8.5,
                 radius: 10,

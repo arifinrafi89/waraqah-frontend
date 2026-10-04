@@ -30,7 +30,7 @@ class P2pMarketplaceCover extends StatelessWidget {
       fit: StackFit.expand,
       children: [
         ListingCover(
-          photoUrl: listing.photoUrls['front'],
+          photoUrl: listing.photoUrls['front'] ?? listing.coverUrl,
           radius: 14,
           art: CoverArt(
             title: listing.title,

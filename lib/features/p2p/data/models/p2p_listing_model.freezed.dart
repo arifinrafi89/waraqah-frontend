@@ -17,7 +17,7 @@ T _$identity<T>(T value) => value;
 mixin _$P2pListingModel {
 
  String get id; String get title; String get sellerId; String get sellerName; int get priceBdt; BookCondition get condition; List<String> get flags; List<String> get photos;/// Contract v1.1: the thumbnail URL of each slot with an uploaded photo.
- Map<String, String> get photoUrls; bool get isNegotiable; HandoverMethod get handover; P2pListingStatus get status; bool get isMine; bool get isMyDeal; String? get rejectionReason; String? get bookId; int get coverSeed; String? get district; String? get area;/// The catalog Category, and its Section, the server files it under.
+ Map<String, String> get photoUrls; bool get isNegotiable; HandoverMethod get handover; P2pListingStatus get status; bool get isMine; bool get isMyDeal; String? get rejectionReason; String? get bookId; int get coverSeed; String? get coverUrl; String? get district; String? get area;/// The catalog Category, and its Section, the server files it under.
  String? get categoryId; Section? get section; int? get newPriceBdt; String? get note;
 /// Create a copy of P2pListingModel
 /// with the given fields replaced by the non-null parameter values.
@@ -32,20 +32,20 @@ $P2pListingModelCopyWith<P2pListingModel> get copyWith => _$P2pListingModelCopyW
 @override
 bool operator ==(Object other) {
   final _this = this as P2pListingModel;
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is P2pListingModel&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.title, _this.title) || other.title == _this.title)&&(identical(other.sellerId, _this.sellerId) || other.sellerId == _this.sellerId)&&(identical(other.sellerName, _this.sellerName) || other.sellerName == _this.sellerName)&&(identical(other.priceBdt, _this.priceBdt) || other.priceBdt == _this.priceBdt)&&(identical(other.condition, _this.condition) || other.condition == _this.condition)&&const DeepCollectionEquality().equals(other.flags, _this.flags)&&const DeepCollectionEquality().equals(other.photos, _this.photos)&&const DeepCollectionEquality().equals(other.photoUrls, _this.photoUrls)&&(identical(other.isNegotiable, _this.isNegotiable) || other.isNegotiable == _this.isNegotiable)&&(identical(other.handover, _this.handover) || other.handover == _this.handover)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.isMine, _this.isMine) || other.isMine == _this.isMine)&&(identical(other.isMyDeal, _this.isMyDeal) || other.isMyDeal == _this.isMyDeal)&&(identical(other.rejectionReason, _this.rejectionReason) || other.rejectionReason == _this.rejectionReason)&&(identical(other.bookId, _this.bookId) || other.bookId == _this.bookId)&&(identical(other.coverSeed, _this.coverSeed) || other.coverSeed == _this.coverSeed)&&(identical(other.district, _this.district) || other.district == _this.district)&&(identical(other.area, _this.area) || other.area == _this.area)&&(identical(other.categoryId, _this.categoryId) || other.categoryId == _this.categoryId)&&(identical(other.section, _this.section) || other.section == _this.section)&&(identical(other.newPriceBdt, _this.newPriceBdt) || other.newPriceBdt == _this.newPriceBdt)&&(identical(other.note, _this.note) || other.note == _this.note));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is P2pListingModel&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.title, _this.title) || other.title == _this.title)&&(identical(other.sellerId, _this.sellerId) || other.sellerId == _this.sellerId)&&(identical(other.sellerName, _this.sellerName) || other.sellerName == _this.sellerName)&&(identical(other.priceBdt, _this.priceBdt) || other.priceBdt == _this.priceBdt)&&(identical(other.condition, _this.condition) || other.condition == _this.condition)&&const DeepCollectionEquality().equals(other.flags, _this.flags)&&const DeepCollectionEquality().equals(other.photos, _this.photos)&&const DeepCollectionEquality().equals(other.photoUrls, _this.photoUrls)&&(identical(other.isNegotiable, _this.isNegotiable) || other.isNegotiable == _this.isNegotiable)&&(identical(other.handover, _this.handover) || other.handover == _this.handover)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.isMine, _this.isMine) || other.isMine == _this.isMine)&&(identical(other.isMyDeal, _this.isMyDeal) || other.isMyDeal == _this.isMyDeal)&&(identical(other.rejectionReason, _this.rejectionReason) || other.rejectionReason == _this.rejectionReason)&&(identical(other.bookId, _this.bookId) || other.bookId == _this.bookId)&&(identical(other.coverSeed, _this.coverSeed) || other.coverSeed == _this.coverSeed)&&(identical(other.coverUrl, _this.coverUrl) || other.coverUrl == _this.coverUrl)&&(identical(other.district, _this.district) || other.district == _this.district)&&(identical(other.area, _this.area) || other.area == _this.area)&&(identical(other.categoryId, _this.categoryId) || other.categoryId == _this.categoryId)&&(identical(other.section, _this.section) || other.section == _this.section)&&(identical(other.newPriceBdt, _this.newPriceBdt) || other.newPriceBdt == _this.newPriceBdt)&&(identical(other.note, _this.note) || other.note == _this.note));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode {
   final _this = this as P2pListingModel;
-  return Object.hashAll([runtimeType,_this.id,_this.title,_this.sellerId,_this.sellerName,_this.priceBdt,_this.condition,const DeepCollectionEquality().hash(_this.flags),const DeepCollectionEquality().hash(_this.photos),const DeepCollectionEquality().hash(_this.photoUrls),_this.isNegotiable,_this.handover,_this.status,_this.isMine,_this.isMyDeal,_this.rejectionReason,_this.bookId,_this.coverSeed,_this.district,_this.area,_this.categoryId,_this.section,_this.newPriceBdt,_this.note]);
+  return Object.hashAll([runtimeType,_this.id,_this.title,_this.sellerId,_this.sellerName,_this.priceBdt,_this.condition,const DeepCollectionEquality().hash(_this.flags),const DeepCollectionEquality().hash(_this.photos),const DeepCollectionEquality().hash(_this.photoUrls),_this.isNegotiable,_this.handover,_this.status,_this.isMine,_this.isMyDeal,_this.rejectionReason,_this.bookId,_this.coverSeed,_this.coverUrl,_this.district,_this.area,_this.categoryId,_this.section,_this.newPriceBdt,_this.note]);
 }
 
 @override
 String toString() {
   final _this = this as P2pListingModel;
-  return 'P2pListingModel(id: ${_this.id}, title: ${_this.title}, sellerId: ${_this.sellerId}, sellerName: ${_this.sellerName}, priceBdt: ${_this.priceBdt}, condition: ${_this.condition}, flags: ${_this.flags}, photos: ${_this.photos}, photoUrls: ${_this.photoUrls}, isNegotiable: ${_this.isNegotiable}, handover: ${_this.handover}, status: ${_this.status}, isMine: ${_this.isMine}, isMyDeal: ${_this.isMyDeal}, rejectionReason: ${_this.rejectionReason}, bookId: ${_this.bookId}, coverSeed: ${_this.coverSeed}, district: ${_this.district}, area: ${_this.area}, categoryId: ${_this.categoryId}, section: ${_this.section}, newPriceBdt: ${_this.newPriceBdt}, note: ${_this.note})';
+  return 'P2pListingModel(id: ${_this.id}, title: ${_this.title}, sellerId: ${_this.sellerId}, sellerName: ${_this.sellerName}, priceBdt: ${_this.priceBdt}, condition: ${_this.condition}, flags: ${_this.flags}, photos: ${_this.photos}, photoUrls: ${_this.photoUrls}, isNegotiable: ${_this.isNegotiable}, handover: ${_this.handover}, status: ${_this.status}, isMine: ${_this.isMine}, isMyDeal: ${_this.isMyDeal}, rejectionReason: ${_this.rejectionReason}, bookId: ${_this.bookId}, coverSeed: ${_this.coverSeed}, coverUrl: ${_this.coverUrl}, district: ${_this.district}, area: ${_this.area}, categoryId: ${_this.categoryId}, section: ${_this.section}, newPriceBdt: ${_this.newPriceBdt}, note: ${_this.note})';
 }
 
 
@@ -56,7 +56,7 @@ abstract mixin class $P2pListingModelCopyWith<$Res>  {
   factory $P2pListingModelCopyWith(P2pListingModel value, $Res Function(P2pListingModel) _then) = _$P2pListingModelCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, Map<String, String> photoUrls, bool isNegotiable, HandoverMethod handover, P2pListingStatus status, bool isMine, bool isMyDeal, String? rejectionReason, String? bookId, int coverSeed, String? district, String? area, String? categoryId, Section? section, int? newPriceBdt, String? note
+ String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, Map<String, String> photoUrls, bool isNegotiable, HandoverMethod handover, P2pListingStatus status, bool isMine, bool isMyDeal, String? rejectionReason, String? bookId, int coverSeed, String? coverUrl, String? district, String? area, String? categoryId, Section? section, int? newPriceBdt, String? note
 });
 
 
@@ -73,7 +73,7 @@ class _$P2pListingModelCopyWithImpl<$Res>
 
 /// Create a copy of P2pListingModel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? photoUrls = null,Object? isNegotiable = null,Object? handover = null,Object? status = null,Object? isMine = null,Object? isMyDeal = null,Object? rejectionReason = freezed,Object? bookId = freezed,Object? coverSeed = null,Object? district = freezed,Object? area = freezed,Object? categoryId = freezed,Object? section = freezed,Object? newPriceBdt = freezed,Object? note = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? photoUrls = null,Object? isNegotiable = null,Object? handover = null,Object? status = null,Object? isMine = null,Object? isMyDeal = null,Object? rejectionReason = freezed,Object? bookId = freezed,Object? coverSeed = null,Object? coverUrl = freezed,Object? district = freezed,Object? area = freezed,Object? categoryId = freezed,Object? section = freezed,Object? newPriceBdt = freezed,Object? note = freezed,}) {
   return _then(P2pListingModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -92,7 +92,8 @@ as bool,isMyDeal: null == isMyDeal ? _self.isMyDeal : isMyDeal // ignore: cast_n
 as bool,rejectionReason: freezed == rejectionReason ? _self.rejectionReason : rejectionReason // ignore: cast_nullable_to_non_nullable
 as String?,bookId: freezed == bookId ? _self.bookId : bookId // ignore: cast_nullable_to_non_nullable
 as String?,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
-as int,district: freezed == district ? _self.district : district // ignore: cast_nullable_to_non_nullable
+as int,coverUrl: freezed == coverUrl ? _self.coverUrl : coverUrl // ignore: cast_nullable_to_non_nullable
+as String?,district: freezed == district ? _self.district : district // ignore: cast_nullable_to_non_nullable
 as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
 as String?,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
 as String?,section: freezed == section ? _self.section : section // ignore: cast_nullable_to_non_nullable
@@ -183,10 +184,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  bool isNegotiable,  HandoverMethod handover,  P2pListingStatus status,  bool isMine,  bool isMyDeal,  String? rejectionReason,  String? bookId,  int coverSeed,  String? district,  String? area,  String? categoryId,  Section? section,  int? newPriceBdt,  String? note)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  bool isNegotiable,  HandoverMethod handover,  P2pListingStatus status,  bool isMine,  bool isMyDeal,  String? rejectionReason,  String? bookId,  int coverSeed,  String? coverUrl,  String? district,  String? area,  String? categoryId,  Section? section,  int? newPriceBdt,  String? note)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _P2pListingModel() when $default != null:
-return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.isNegotiable,_that.handover,_that.status,_that.isMine,_that.isMyDeal,_that.rejectionReason,_that.bookId,_that.coverSeed,_that.district,_that.area,_that.categoryId,_that.section,_that.newPriceBdt,_that.note);case _:
+return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.isNegotiable,_that.handover,_that.status,_that.isMine,_that.isMyDeal,_that.rejectionReason,_that.bookId,_that.coverSeed,_that.coverUrl,_that.district,_that.area,_that.categoryId,_that.section,_that.newPriceBdt,_that.note);case _:
   return orElse();
 
 }
@@ -204,10 +205,10 @@ return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.price
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  bool isNegotiable,  HandoverMethod handover,  P2pListingStatus status,  bool isMine,  bool isMyDeal,  String? rejectionReason,  String? bookId,  int coverSeed,  String? district,  String? area,  String? categoryId,  Section? section,  int? newPriceBdt,  String? note)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  bool isNegotiable,  HandoverMethod handover,  P2pListingStatus status,  bool isMine,  bool isMyDeal,  String? rejectionReason,  String? bookId,  int coverSeed,  String? coverUrl,  String? district,  String? area,  String? categoryId,  Section? section,  int? newPriceBdt,  String? note)  $default,) {final _that = this;
 switch (_that) {
 case _P2pListingModel():
-return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.isNegotiable,_that.handover,_that.status,_that.isMine,_that.isMyDeal,_that.rejectionReason,_that.bookId,_that.coverSeed,_that.district,_that.area,_that.categoryId,_that.section,_that.newPriceBdt,_that.note);case _:
+return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.isNegotiable,_that.handover,_that.status,_that.isMine,_that.isMyDeal,_that.rejectionReason,_that.bookId,_that.coverSeed,_that.coverUrl,_that.district,_that.area,_that.categoryId,_that.section,_that.newPriceBdt,_that.note);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -224,10 +225,10 @@ return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.price
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  bool isNegotiable,  HandoverMethod handover,  P2pListingStatus status,  bool isMine,  bool isMyDeal,  String? rejectionReason,  String? bookId,  int coverSeed,  String? district,  String? area,  String? categoryId,  Section? section,  int? newPriceBdt,  String? note)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String sellerId,  String sellerName,  int priceBdt,  BookCondition condition,  List<String> flags,  List<String> photos,  Map<String, String> photoUrls,  bool isNegotiable,  HandoverMethod handover,  P2pListingStatus status,  bool isMine,  bool isMyDeal,  String? rejectionReason,  String? bookId,  int coverSeed,  String? coverUrl,  String? district,  String? area,  String? categoryId,  Section? section,  int? newPriceBdt,  String? note)?  $default,) {final _that = this;
 switch (_that) {
 case _P2pListingModel() when $default != null:
-return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.isNegotiable,_that.handover,_that.status,_that.isMine,_that.isMyDeal,_that.rejectionReason,_that.bookId,_that.coverSeed,_that.district,_that.area,_that.categoryId,_that.section,_that.newPriceBdt,_that.note);case _:
+return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.priceBdt,_that.condition,_that.flags,_that.photos,_that.photoUrls,_that.isNegotiable,_that.handover,_that.status,_that.isMine,_that.isMyDeal,_that.rejectionReason,_that.bookId,_that.coverSeed,_that.coverUrl,_that.district,_that.area,_that.categoryId,_that.section,_that.newPriceBdt,_that.note);case _:
   return null;
 
 }
@@ -239,7 +240,7 @@ return $default(_that.id,_that.title,_that.sellerId,_that.sellerName,_that.price
 @JsonSerializable()
 
 class _P2pListingModel implements P2pListingModel {
-  const _P2pListingModel({required this.id, required this.title, required this.sellerId, required this.sellerName, required this.priceBdt, this.condition = BookCondition.good,  List<String> flags = const <String>[],  List<String> photos = const <String>[],  Map<String, String> photoUrls = const <String, String>{}, this.isNegotiable = false, this.handover = HandoverMethod.meetInPerson, this.status = P2pListingStatus.live, this.isMine = false, this.isMyDeal = false, this.rejectionReason, this.bookId, this.coverSeed = 0, this.district, this.area, this.categoryId, this.section, this.newPriceBdt, this.note}): _flags = flags,_photos = photos,_photoUrls = photoUrls;
+  const _P2pListingModel({required this.id, required this.title, required this.sellerId, required this.sellerName, required this.priceBdt, this.condition = BookCondition.good,  List<String> flags = const <String>[],  List<String> photos = const <String>[],  Map<String, String> photoUrls = const <String, String>{}, this.isNegotiable = false, this.handover = HandoverMethod.meetInPerson, this.status = P2pListingStatus.live, this.isMine = false, this.isMyDeal = false, this.rejectionReason, this.bookId, this.coverSeed = 0, this.coverUrl, this.district, this.area, this.categoryId, this.section, this.newPriceBdt, this.note}): _flags = flags,_photos = photos,_photoUrls = photoUrls;
   factory _P2pListingModel.fromJson(Map<String, dynamic> json) => _$P2pListingModelFromJson(json);
 
 @override final  String id;
@@ -279,6 +280,7 @@ class _P2pListingModel implements P2pListingModel {
 @override final  String? rejectionReason;
 @override final  String? bookId;
 @override@JsonKey() final  int coverSeed;
+@override final  String? coverUrl;
 @override final  String? district;
 @override final  String? area;
 /// The catalog Category, and its Section, the server files it under.
@@ -300,18 +302,18 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-    return identical(this, other) || (other.runtimeType == runtimeType&&other is _P2pListingModel&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.sellerId, sellerId) || other.sellerId == sellerId)&&(identical(other.sellerName, sellerName) || other.sellerName == sellerName)&&(identical(other.priceBdt, priceBdt) || other.priceBdt == priceBdt)&&(identical(other.condition, condition) || other.condition == condition)&&const DeepCollectionEquality().equals(other.flags, _flags)&&const DeepCollectionEquality().equals(other.photos, _photos)&&const DeepCollectionEquality().equals(other.photoUrls, _photoUrls)&&(identical(other.isNegotiable, isNegotiable) || other.isNegotiable == isNegotiable)&&(identical(other.handover, handover) || other.handover == handover)&&(identical(other.status, status) || other.status == status)&&(identical(other.isMine, isMine) || other.isMine == isMine)&&(identical(other.isMyDeal, isMyDeal) || other.isMyDeal == isMyDeal)&&(identical(other.rejectionReason, rejectionReason) || other.rejectionReason == rejectionReason)&&(identical(other.bookId, bookId) || other.bookId == bookId)&&(identical(other.coverSeed, coverSeed) || other.coverSeed == coverSeed)&&(identical(other.district, district) || other.district == district)&&(identical(other.area, area) || other.area == area)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.section, section) || other.section == section)&&(identical(other.newPriceBdt, newPriceBdt) || other.newPriceBdt == newPriceBdt)&&(identical(other.note, note) || other.note == note));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _P2pListingModel&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.sellerId, sellerId) || other.sellerId == sellerId)&&(identical(other.sellerName, sellerName) || other.sellerName == sellerName)&&(identical(other.priceBdt, priceBdt) || other.priceBdt == priceBdt)&&(identical(other.condition, condition) || other.condition == condition)&&const DeepCollectionEquality().equals(other.flags, _flags)&&const DeepCollectionEquality().equals(other.photos, _photos)&&const DeepCollectionEquality().equals(other.photoUrls, _photoUrls)&&(identical(other.isNegotiable, isNegotiable) || other.isNegotiable == isNegotiable)&&(identical(other.handover, handover) || other.handover == handover)&&(identical(other.status, status) || other.status == status)&&(identical(other.isMine, isMine) || other.isMine == isMine)&&(identical(other.isMyDeal, isMyDeal) || other.isMyDeal == isMyDeal)&&(identical(other.rejectionReason, rejectionReason) || other.rejectionReason == rejectionReason)&&(identical(other.bookId, bookId) || other.bookId == bookId)&&(identical(other.coverSeed, coverSeed) || other.coverSeed == coverSeed)&&(identical(other.coverUrl, coverUrl) || other.coverUrl == coverUrl)&&(identical(other.district, district) || other.district == district)&&(identical(other.area, area) || other.area == area)&&(identical(other.categoryId, categoryId) || other.categoryId == categoryId)&&(identical(other.section, section) || other.section == section)&&(identical(other.newPriceBdt, newPriceBdt) || other.newPriceBdt == newPriceBdt)&&(identical(other.note, note) || other.note == note));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
 int get hashCode {
-    return Object.hashAll([runtimeType,id,title,sellerId,sellerName,priceBdt,condition,const DeepCollectionEquality().hash(_flags),const DeepCollectionEquality().hash(_photos),const DeepCollectionEquality().hash(_photoUrls),isNegotiable,handover,status,isMine,isMyDeal,rejectionReason,bookId,coverSeed,district,area,categoryId,section,newPriceBdt,note]);
+    return Object.hashAll([runtimeType,id,title,sellerId,sellerName,priceBdt,condition,const DeepCollectionEquality().hash(_flags),const DeepCollectionEquality().hash(_photos),const DeepCollectionEquality().hash(_photoUrls),isNegotiable,handover,status,isMine,isMyDeal,rejectionReason,bookId,coverSeed,coverUrl,district,area,categoryId,section,newPriceBdt,note]);
 }
 
 @override
 String toString() {
-    return 'P2pListingModel(id: $id, title: $title, sellerId: $sellerId, sellerName: $sellerName, priceBdt: $priceBdt, condition: $condition, flags: $flags, photos: $photos, photoUrls: $photoUrls, isNegotiable: $isNegotiable, handover: $handover, status: $status, isMine: $isMine, isMyDeal: $isMyDeal, rejectionReason: $rejectionReason, bookId: $bookId, coverSeed: $coverSeed, district: $district, area: $area, categoryId: $categoryId, section: $section, newPriceBdt: $newPriceBdt, note: $note)';
+    return 'P2pListingModel(id: $id, title: $title, sellerId: $sellerId, sellerName: $sellerName, priceBdt: $priceBdt, condition: $condition, flags: $flags, photos: $photos, photoUrls: $photoUrls, isNegotiable: $isNegotiable, handover: $handover, status: $status, isMine: $isMine, isMyDeal: $isMyDeal, rejectionReason: $rejectionReason, bookId: $bookId, coverSeed: $coverSeed, coverUrl: $coverUrl, district: $district, area: $area, categoryId: $categoryId, section: $section, newPriceBdt: $newPriceBdt, note: $note)';
 }
 
 
@@ -322,7 +324,7 @@ abstract mixin class _$P2pListingModelCopyWith<$Res> implements $P2pListingModel
   factory _$P2pListingModelCopyWith(_P2pListingModel value, $Res Function(_P2pListingModel) _then) = __$P2pListingModelCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, Map<String, String> photoUrls, bool isNegotiable, HandoverMethod handover, P2pListingStatus status, bool isMine, bool isMyDeal, String? rejectionReason, String? bookId, int coverSeed, String? district, String? area, String? categoryId, Section? section, int? newPriceBdt, String? note
+ String id, String title, String sellerId, String sellerName, int priceBdt, BookCondition condition, List<String> flags, List<String> photos, Map<String, String> photoUrls, bool isNegotiable, HandoverMethod handover, P2pListingStatus status, bool isMine, bool isMyDeal, String? rejectionReason, String? bookId, int coverSeed, String? coverUrl, String? district, String? area, String? categoryId, Section? section, int? newPriceBdt, String? note
 });
 
 
@@ -339,7 +341,7 @@ class __$P2pListingModelCopyWithImpl<$Res>
 
 /// Create a copy of P2pListingModel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? photoUrls = null,Object? isNegotiable = null,Object? handover = null,Object? status = null,Object? isMine = null,Object? isMyDeal = null,Object? rejectionReason = freezed,Object? bookId = freezed,Object? coverSeed = null,Object? district = freezed,Object? area = freezed,Object? categoryId = freezed,Object? section = freezed,Object? newPriceBdt = freezed,Object? note = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? sellerId = null,Object? sellerName = null,Object? priceBdt = null,Object? condition = null,Object? flags = null,Object? photos = null,Object? photoUrls = null,Object? isNegotiable = null,Object? handover = null,Object? status = null,Object? isMine = null,Object? isMyDeal = null,Object? rejectionReason = freezed,Object? bookId = freezed,Object? coverSeed = null,Object? coverUrl = freezed,Object? district = freezed,Object? area = freezed,Object? categoryId = freezed,Object? section = freezed,Object? newPriceBdt = freezed,Object? note = freezed,}) {
   return _then(_P2pListingModel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -358,7 +360,8 @@ as bool,isMyDeal: null == isMyDeal ? _self.isMyDeal : isMyDeal // ignore: cast_n
 as bool,rejectionReason: freezed == rejectionReason ? _self.rejectionReason : rejectionReason // ignore: cast_nullable_to_non_nullable
 as String?,bookId: freezed == bookId ? _self.bookId : bookId // ignore: cast_nullable_to_non_nullable
 as String?,coverSeed: null == coverSeed ? _self.coverSeed : coverSeed // ignore: cast_nullable_to_non_nullable
-as int,district: freezed == district ? _self.district : district // ignore: cast_nullable_to_non_nullable
+as int,coverUrl: freezed == coverUrl ? _self.coverUrl : coverUrl // ignore: cast_nullable_to_non_nullable
+as String?,district: freezed == district ? _self.district : district // ignore: cast_nullable_to_non_nullable
 as String?,area: freezed == area ? _self.area : area // ignore: cast_nullable_to_non_nullable
 as String?,categoryId: freezed == categoryId ? _self.categoryId : categoryId // ignore: cast_nullable_to_non_nullable
 as String?,section: freezed == section ? _self.section : section // ignore: cast_nullable_to_non_nullable
