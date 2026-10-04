@@ -10,7 +10,7 @@ import '../widgets/chat_skeleton.dart';
 import '../widgets/prompt_chip_row.dart';
 import 'chat_transcript.dart';
 
-/// Screen 4 — the Gemini-backed reading assistant. Pushed over the shell, so
+/// Screen 4 — the reading assistant (replies from the server). Pushed over the shell, so
 /// it takes the whole screen.
 class AiChatPage extends ConsumerWidget {
   const AiChatPage({super.key});

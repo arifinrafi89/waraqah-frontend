@@ -2,9 +2,9 @@ import '../entities/chat_message.dart';
 
 /// The AI block's contract.
 ///
-/// The Gemini key never reaches the app — the Go backend proxies the call and
-/// injects the Waraqah catalog into the prompt, so recommendations stay inside
-/// our own listings.
+/// The server picks the Books from Waraqah's catalog and words the reply;
+/// any AI key stays on the server, so recommendations stay inside our own
+/// catalog.
 abstract interface class AssistantRepository {
   /// The greeting shown when the chat opens.
   Future<List<ChatMessage>> openConversation();
