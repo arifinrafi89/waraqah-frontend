@@ -306,7 +306,7 @@ These come from the instructor and the team. Breaking them fails review.
 1. **No hand-written file over 120 lines.** Split widgets into small bricks. Generated files are exempt.
 2. **`main.dart` contains no widgets.**
 3. **LEGO + Clean Architecture** as in §4.2. One page per screen; the rest are widgets.
-4. **Use the shared bricks in `core/widgets/`** before making new ones. Only Rahinur changes `core/` (ask, or build it inside your feature first).
+4. **Use the shared bricks in `core/widgets/`** before making new ones. Code several features need goes in `core/`; anyone may add to it.
 
 **State and data**
 5. **Riverpod only.** No `provider` package, no `ChangeNotifier`, no `setState` for shared state. Use a `Notifier` only when state has real actions; for a simple one-value choice use `selectionProvider<T>(initial)`.
@@ -417,7 +417,7 @@ The owner builds these and keeps their shape stable; everyone else uses them.
 
 | Piece | Owner | Used by |
 |---|---|---|
-| `Book` / `Edition` models, design system, `core/` | Rahinur | everyone |
+| `Book` / `Edition` models, design system | Rahinur | everyone |
 | Catalog search, collections & Booklists data | Rahinur | Arifin (AI), Farhan |
 | **Add to cart** (new edition, Certified Used, reader listing) | Farhan | Rahinur, Arifin |
 | Payment method picker, wallet credit (fake backend: `WalletFakeStore.credit(amount, WalletReason.sellBack, note: title)`) | Farhan | Arifin |
