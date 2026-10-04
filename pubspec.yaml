@@ -20,6 +20,8 @@ dependencies:
 
   # Networking
   dio: ^5.9.0
+  # Reads live (server-sent events) answers while they arrive on the web.
+  web: ^1.1.1
 
   # Models / codegen runtime
   freezed_annotation: ^3.1.0
